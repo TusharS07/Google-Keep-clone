@@ -11,6 +11,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSelectModule} from '@angular/material/select';
 import { LoginComponent } from './componts/login/login.component';
+import { ForgotPasswordComponent } from './componts/forgot-password/forgot-password.component';
+import { ResetComponent } from './componts/reset/reset.component';
 
 
 
@@ -18,7 +20,9 @@ import { LoginComponent } from './componts/login/login.component';
   declarations: [
     AppComponent,
     SignUpComponent,
-    LoginComponent
+    LoginComponent,
+    ForgotPasswordComponent,
+    ResetComponent
   ],
   imports: [
     BrowserModule,
