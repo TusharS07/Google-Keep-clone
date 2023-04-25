@@ -1,0 +1,201 @@
+.main {
+    background: #fff;
+    direction: ltr;
+    font-size: 14px;
+    line-height: 1.4286;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+    background: #fff;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    display: block;
+    flex-shrink: 0;
+    margin: 0 auto;
+    min-height: 0;
+    width: 500px;
+}
+
+.content-container {
+    box-flex: 1;
+    flex-grow: 1;
+    overflow: hidden;
+    padding: 24px 24px 36px;
+
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+}
+
+.google-logo {
+    display: flex;
+    height: 24px;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    font-weight: 550;
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .g {
+    color: #4285f4;
+  }
+  
+  .o1 {
+    color: #ea4335;
+  }
+  
+  .o2 {
+    color: #fbbc05;
+  }
+  
+  .l {
+    color: #34a853;
+  }
+  
+  .e {
+    color: #ea4335;
+  }
+
+
+.form-container {
+    margin: auto -24px;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.heading-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.heading-text h1 {
+    padding-bottom: 0;
+    padding-top: 16px;
+    color: #202124;
+    font-size: 24px;
+    font-family: "Google Sans","Noto Sans Myanmar UI",arial,sans-serif;
+    font-weight: 400;
+    line-height: 1.3333;
+    margin-bottom: 0;
+    margin-top: 0;
+    word-break: break-word;
+}
+
+.signIn-msg {
+    padding-bottom: 1px;
+    padding-top: 7px;
+    color: #202124;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.1px;
+    line-height: 1.5;
+}
+
+.input-container {
+    border: 0 solid transparent;
+    border-width: 0 24px;
+    box-sizing: border-box;
+    display: inline-block;
+    font-size: 14px;
+    padding: 24px 0 0;
+    vertical-align: top;
+    white-space: normal;
+    width: 100%;
+}
+
+.input-data {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.not-your-comp-msg {
+    color: #5f6368;
+    font-size: 14px;
+    line-height: 1.4286;
+    margin-top: 32px;
+}
+
+.msg {
+    padding-bottom: 3px;
+    padding-top: 9px;
+}
+
+.learn-more {
+    margin: 0 -3px;
+    padding: 0 3px;
+    text-decoration: none;
+    border-radius: 4px;
+    color: #1a73e8;
+    display: inline-block;
+    font-weight: 500;
+    letter-spacing: .25px;
+    outline: 0;
+    position: relative;
+}
+
+.button-all {
+    align-items: flex-start;
+    display: flex;
+    box-flex: 0;
+    flex-grow: 0;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: -8px;
+    margin-top: 32px;
+    min-height: 48px;
+    padding-bottom: 20px;
+}
+
+.buttonss {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.next-button {
+    text-align: right;
+    box-flex: 1;
+    flex-grow: 1;
+}
+
+.create-ac-button {
+    flex-grow: 1;
+    display: flex;
+}
+
+@media (min-width: 601px) {
+    .content-container {
+        height: auto;
+        min-height: 500px;
+    }
+}
+
+@media (min-width: 450px) {
+    .content-container {
+        padding: 48px 40px 36px;
+    }
+    .form-container {
+        margin: auto -40px;
+        padding-left: 40px;
+        padding-right: 40px;
+    
+    }
+    .input-container {
+        border-left-width: 40px;
+        border-right-width: 40px;
+    }
+    
+}
+
