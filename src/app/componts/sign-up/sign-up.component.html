@@ -22,7 +22,7 @@
               <mat-form-field appearance="outline" class="email-field-inner">
                 <mat-label>First Name</mat-label>
                 <input matInput placeholder=" " formControlName="firstName">
-                <mat-error>Please your name</mat-error>
+                <mat-error>Please Enter your FirstName</mat-error>
                 <mat-hint></mat-hint>
               </mat-form-field>
             </p>
@@ -31,6 +31,7 @@
               <mat-form-field appearance="outline" class="email-field-inner">
                 <mat-label>Last Name</mat-label>
                 <input matInput placeholder="" formControlName="lastName">
+                <mat-error>Please Enter your Lastname</mat-error>
                 <mat-hint></mat-hint>
               </mat-form-field>
             </p>
@@ -41,6 +42,7 @@
               <mat-form-field appearance="outline" class="email-field-inner">
                 <mat-label>Username</mat-label>
                 <input matInput placeholder="" formControlName="email">
+                <mat-error>enter valid email</mat-error>
                 <!-- <mat-icon matSuffix>@gmail.com</mat-icon> -->
                 <mat-hint>You can use letters, numbers &amp;periods</mat-hint>
               </mat-form-field>
@@ -60,6 +62,7 @@
                 <mat-form-field appearance="outline" class="email-field-inner">
                   <mat-label>Password</mat-label>
                   <input matInput placeholder=" " type="password" formControlName="password">
+                  <mat-error>password should be more than 6 characters</mat-error>
                   <mat-hint></mat-hint>
                 </mat-form-field>
               </p>

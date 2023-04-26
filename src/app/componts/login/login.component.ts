@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserService } from 'src/app/Service/UserService/user.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class LoginComponent implements OnInit {
 
   login! :  FormGroup 
 
-  constructor( private  formBuilder:FormBuilder , private userService:UserService){}
+  constructor( private  formBuilder:FormBuilder , private userService:UserService, private snackBar: MatSnackBar){}
   ngOnInit(): void {
     this.login = this.formBuilder.group({
       email : ['' ,[Validators.required , Validators.email]],
@@ -33,8 +34,10 @@ export class LoginComponent implements OnInit {
 
       this.userService.login(sendData).subscribe((result: any) => {
         console.log(result);
-        
+        this.snackBar.open("Login Successfully!");
       })
+    } else {
+      this.snackBar.open("please enter valid credential's");
     }
 
   }

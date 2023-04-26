@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserService } from 'src/app/Service/UserService/user.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class SignUpComponent implements OnInit {
   signup! : FormGroup;
 
 
-  constructor( private  formBuilder:FormBuilder , private userService:UserService){}
+  constructor( private  formBuilder:FormBuilder , private userService:UserService, private snackBar: MatSnackBar){}
   
   ngOnInit(): void {
     this.signup = this.formBuilder.group({
@@ -40,7 +41,10 @@ export class SignUpComponent implements OnInit {
 
       this.userService.registerUser(sendData).subscribe((result: any) => {
         console.log('Signed Up Is Successfull',result);
+        this.snackBar.open("Signed Up Is Successfull!");
       })
+    }else {
+      this.snackBar.open("please enter valid credential's");
     }
   }
 
