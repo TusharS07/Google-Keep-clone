@@ -13,7 +13,8 @@ import {MatSelectModule} from '@angular/material/select';
 import { LoginComponent } from './componts/login/login.component';
 import { ForgotPasswordComponent } from './componts/forgot-password/forgot-password.component';
 import { ResetComponent } from './componts/reset/reset.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -32,7 +33,10 @@ import { ResetComponent } from './componts/reset/reset.component';
     MatInputModule,
     MatButtonModule,
     MatCheckboxModule,
-    MatSelectModule
+    MatSelectModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

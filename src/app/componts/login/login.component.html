@@ -1,4 +1,6 @@
+
 <div class="main">
+    <form [formGroup]="login">
     <div class="container">
         <div class="content-container">
             <div class="google-logo">
@@ -23,7 +25,7 @@
                         <p>
                             <mat-form-field appearance="outline" style="width: 100%;">
                               <mat-label>Email or phone</mat-label>
-                              <input matInput placeholder="">
+                              <input matInput formControlName="email">
                               <br>
                               <mat-hint style="font-size: 16px; margin-top: 5px; margin-left: -15px; color: rgb(26,115,232);  cursor: pointer;" routerLink="/reset" routerLinkActive="active">  
                                 Forgot email? </mat-hint>
@@ -33,7 +35,7 @@
                           <p>
                             <mat-form-field appearance="outline" style="width: 100%;">
                               <mat-label>Password</mat-label>
-                              <input matInput placeholder="" type="password">
+                              <input matInput placeholder="" type="password" formControlName="password">
                               <br>
                               <mat-hint style="font-size: 16px; margin-top: 5px; margin-left: -15px; color: rgb(26,115,232); cursor: pointer;" routerLink="/forgot-password" routerLinkActive="active"> 
                                 Forgot password?</mat-hint>
@@ -52,7 +54,7 @@
                           <div class="button-all">
                             <div class="buttonss">
                                 <div class="next-button">
-                                    <button mat-raised-button color="primary" style="background-color: rgb(26,115,232); width: 80px;">Next</button>
+                                    <button mat-raised-button color="primary"  style="background-color: rgb(26,115,232); width: 80px;" type="button" (click)="loginUser()">Next</button>
                                 </div>
                                 <div class="create-ac-button">
                                     <button mat-button color="primary" style="color: rgb(26,115,232);" routerLink="/sign-up">Create account</button>
@@ -65,4 +67,6 @@
               </div>
         </div>
     </div>
+</form>
 </div>
+
