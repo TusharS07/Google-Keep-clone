@@ -1,131 +1,135 @@
 <div class="main-container">
   <form [formGroup]="signup">
-  <div class="form-container">
-    <div class="form">
-      <div class="form-content">
-        <div class="google-logo">
-          <span class="g">G</span>
-          <span class="o1">o</span>
-          <span class="o2">o</span>
-          <span class="g">g</span>
-          <span class="l">l</span>
-          <span class="e">e</span>
-        </div>
-
-        <div class="heading">
-          <h1><span jsslot>Create your Google Account</span></h1>
-        </div>
-
-        <div class="main-form">
-          <div class="first-last-name">
-            <p>
-              <mat-form-field appearance="outline" class="email-field-inner">
-                <mat-label>First Name</mat-label>
-                <input matInput placeholder=" " formControlName="firstName">
-                <mat-error>Please Enter your FirstName</mat-error>
-                <mat-hint></mat-hint>
-              </mat-form-field>
-            </p>
-
-            <p>
-              <mat-form-field appearance="outline" class="email-field-inner">
-                <mat-label>Last Name</mat-label>
-                <input matInput placeholder="" formControlName="lastName">
-                <mat-error>Please Enter your Lastname</mat-error>
-                <mat-hint></mat-hint>
-              </mat-form-field>
-            </p>
+    <div class="form-container">
+      <div class="form">
+        <div class="form-content">
+          <div class="google-logo">
+            <span class="g">G</span>
+            <span class="o1">o</span>
+            <span class="o2">o</span>
+            <span class="g">g</span>
+            <span class="l">l</span>
+            <span class="e">e</span>
           </div>
 
-          <div class="email-field">
-            <p>
-              <mat-form-field appearance="outline" class="email-field-inner">
-                <mat-label>Username</mat-label>
-                <input matInput placeholder="" formControlName="email">
-                <mat-error>enter valid email</mat-error>
-                <!-- <mat-icon matSuffix>@gmail.com</mat-icon> -->
-                <mat-hint>You can use letters, numbers &amp;periods</mat-hint>
-              </mat-form-field>
-            </p>
-
-            <div class="use-email-button-div">
-              <button mat-button color="primary" class="use-email-button">Use my current email address instead</button>
-            </div>
-
-
-
+          <div class="heading">
+            <h1><span jsslot>Create your Google Account</span></h1>
           </div>
 
-          <div class="password-main">
+          <div class="main-form">
             <div class="first-last-name">
               <p>
                 <mat-form-field appearance="outline" class="email-field-inner">
-                  <mat-label>Password</mat-label>
-                  <input matInput placeholder=" " [type]="hide ? 'password' : 'text'" formControlName="password">
-                  <mat-error>password should be more than 6 characters</mat-error>
+                  <mat-label>First Name</mat-label>
+                  <input matInput placeholder=" " formControlName="firstName">
+                  <mat-error>Please Enter your FirstName</mat-error>
                   <mat-hint></mat-hint>
                 </mat-form-field>
               </p>
 
               <p>
                 <mat-form-field appearance="outline" class="email-field-inner">
-                  <mat-label>Confirm</mat-label>
-                  <input matInput placeholder="" [type]="hide ? 'password' : 'text'" formControlName="confirmPassword">
-                  <mat-error *ngIf="signup.get('confirmPassword')?.invalid"> Password do not match</mat-error>
+                  <mat-label>Last Name</mat-label>
+                  <input matInput placeholder="" formControlName="lastName">
+                  <mat-error>Please Enter your Lastname</mat-error>
                   <mat-hint></mat-hint>
                 </mat-form-field>
               </p>
             </div>
-            <mat-checkbox class="example-margin" (click) = 'showPassword()'>Show password</mat-checkbox>
+
+            <div class="email-field">
+              <p>
+                <mat-form-field appearance="outline" class="email-field-inner">
+                  <mat-label>Username</mat-label>
+                  <input matInput placeholder="" formControlName="email">
+                  <mat-error>enter valid email</mat-error>
+                  <!-- <mat-icon matSuffix>@gmail.com</mat-icon> -->
+                  <mat-hint>You can use letters, numbers &amp;periods</mat-hint>
+                </mat-form-field>
+              </p>
+
+              <div class="use-email-button-div">
+                <button mat-button color="primary" class="use-email-button">Use my current email address
+                  instead</button>
+              </div>
 
 
-          </div>
+
+            </div>
+
+            <div class="password-main">
+              <div class="first-last-name">
+                <p>
+                  <mat-form-field appearance="outline" class="email-field-inner">
+                    <mat-label>Password</mat-label>
+                    <input matInput placeholder=" " [type]="hide ? 'password' : 'text'" formControlName="password">
+                    <mat-error>password should be more than 6 characters</mat-error>
+                    <mat-hint></mat-hint>
+                  </mat-form-field>
+                </p>
+
+                <p>
+                  <mat-form-field appearance="outline" class="email-field-inner">
+                    <mat-label>Confirm</mat-label>
+                    <input matInput placeholder="" [type]="hide ? 'password' : 'text'"
+                      formControlName="confirmPassword">
+                    <mat-error *ngIf="signup.get('confirmPassword')?.invalid"> Password do not match</mat-error>
+                    <mat-hint></mat-hint>
+                  </mat-form-field>
+                </p>
+              </div>
+              <mat-checkbox class="example-margin" (click)='showPassword()'>Show password</mat-checkbox>
 
 
-          <div class="last-buttons">
-            <button mat-button color="primary" class="sign-in-instant-button" style="color: rgb(26,115,232);" routerLink="/login" >Sign in instead</button>
-            <button mat-raised-button color="primary" class="next-button" style="width: 90px; background-color: rgb(26,115,232);" type="button" (click)="register()">Next</button>
+            </div>
+
+
+            <div class="last-buttons">
+              <button mat-button color="primary" class="sign-in-instant-button" style="color: rgb(26,115,232);"
+                routerLink="/login">Sign in instead</button>
+              <button mat-raised-button color="primary" class="next-button"
+                style="width: 90px; background-color: rgb(26,115,232);" type="button" (click)="register()">Next</button>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="google-img">
-        <div class="img-data">
-          <figure class="data">
-            <img src="../../../assets/account.svg" alt="" height="244px" width="244px" class="data-img">
-            <figcaption class="caption">One account All of Google<br> working for you.</figcaption>
-          </figure>
+        <div class="google-img">
+          <div class="img-data">
+            <figure class="data">
+              <img src="../../../assets/account.svg" alt="" height="244px" width="244px" class="data-img">
+              <figcaption class="caption">One account All of Google<br> working for you.</figcaption>
+            </figure>
 
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <footer>
-    <div class="lang-select">
-      <mat-form-field appearance="fill">
-        <mat-label>English(United State)&nbsp;&nbsp; </mat-label>
-        <mat-select>
-          <!-- <mat-option *ngFor="let food of foods" [value]="food.value">
+    <footer>
+      <div class="lang-select">
+        <mat-form-field appearance="fill">
+          <mat-label>English(United State)&nbsp;&nbsp; </mat-label>
+          <mat-select>
+            <!-- <mat-option *ngFor="let food of foods" [value]="food.value">
                {{food.viewValue}} 
             </mat-option> -->
-        </mat-select>
-      </mat-form-field>
+          </mat-select>
+        </mat-form-field>
 
-    </div>
+      </div>
 
-    <ul class="all-links">
-      <li class="links">
-        <a href="">Help</a>
-      </li>
+      <ul class="all-links">
+        <li class="links">
+          <a href="">Help</a>
+        </li>
 
-      <li class="links">
-        <a href="">Privacy</a>
-      </li>
+        <li class="links">
+          <a href="">Privacy</a>
+        </li>
 
-      <li class="links">
-        <a href="/">Terms</a>
-      </li>
-    </ul>
-  </footer>
-</form>
+        <li class="links">
+          <a href="/">Terms</a>
+        </li>
+      </ul>
+    </footer>
+  </form>
 </div>

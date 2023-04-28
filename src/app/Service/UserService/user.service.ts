@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpService } from '../HttpService/http.service';
-import { HttpClient,HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 @Injectable({
@@ -8,36 +8,36 @@ import { HttpClient,HttpHeaders } from '@angular/common/http';
 })
 export class UserService {
 
-  token : any
+  token: any
 
   constructor(private HttpService: HttpService) { }
 
-  
 
-  registerUser(reqdata:any) {
+
+  registerUser(reqdata: any) {
 
     this.token = localStorage.getItem('token');
 
     let httpHeadersOption = {
-      headers : new HttpHeaders({ 
-        contentType : 'application/json',
-        authorization : this.token
+      headers: new HttpHeaders({
+        contentType: 'application/json',
+        authorization: this.token
       })
     }
-   return this.HttpService.PostService("user/userSignUp",reqdata, false, httpHeadersOption);
+    return this.HttpService.PostService("user/userSignUp", reqdata, false, httpHeadersOption);
   }
 
-  login(reqdata:any) {
+  login(reqdata: any) {
 
     this.token = localStorage.getItem('token');
 
     let httpHeadersOption = {
-      headers : new HttpHeaders({ 
-        contentType : 'application/json',
-        authorization : this.token
+      headers: new HttpHeaders({
+        contentType: 'application/json',
+        authorization: this.token
       })
     }
 
-    return this.HttpService.PostService("user/login",reqdata, false, httpHeadersOption);
-   }
+    return this.HttpService.PostService("user/login", reqdata, false, httpHeadersOption);
+  }
 }

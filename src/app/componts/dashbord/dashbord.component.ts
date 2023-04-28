@@ -1,19 +1,19 @@
-import {MediaMatcher} from '@angular/cdk/layout';
-import {ChangeDetectorRef, Component, OnDestroy} from '@angular/core';
+import { MediaMatcher } from '@angular/cdk/layout';
+import { ChangeDetectorRef, Component, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-dashbord',
   templateUrl: './dashbord.component.html',
   styleUrls: ['./dashbord.component.scss']
 })
-export class DashbordComponent implements  OnDestroy {
+export class DashbordComponent implements OnDestroy {
 
   mobileQuery: MediaQueryList;
 
-  fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
+  fillerNav = Array.from({ length: 50 }, (_, i) => `Nav Item ${i + 1}`);
 
   fillerContent = Array.from(
-    {length: 50},
+    { length: 50 },
     () =>
       `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco

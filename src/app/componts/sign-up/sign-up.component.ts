@@ -2,6 +2,7 @@ import { group } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/Service/UserService/user.service';
 
 
@@ -11,24 +12,25 @@ import { UserService } from 'src/app/Service/UserService/user.service';
   styleUrls: ['./sign-up.component.scss']
 })
 export class SignUpComponent implements OnInit {
- 
-
-  signup! : FormGroup;
-  hide:Boolean = true;
 
 
-  constructor( private  formBuilder:FormBuilder ,
-     private userService:UserService,
-      private snackBar: MatSnackBar){}
-  
+  signup!: FormGroup;
+  hide: Boolean = true;
+
+
+  constructor(private formBuilder: FormBuilder,
+    private userService: UserService,
+    private snackBar: MatSnackBar,
+    private route: Router) { }
+
   ngOnInit(): void {
     this.signup = this.formBuilder.group({
-      firstName : ['', [Validators.required]],
-      lastName : ['', [Validators.required]],
-      email : ['' ,[Validators.required , Validators.email]],
-      password:['',[Validators.required, Validators.minLength(6)]],
-      confirmPassword: ['',[Validators.required, Validators.minLength(6)]]
-    },{
+      firstName: ['', [Validators.required]],
+      lastName: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      confirmPassword: ['', [Validators.required, Validators.minLength(6)]]
+    }, {
       validator: this.passwordMatchingCheck('password', 'confirmPassword')
     });
 
@@ -38,7 +40,7 @@ export class SignUpComponent implements OnInit {
     this.hide = !this.hide;
   }
 
-  passwordMatchingCheck(passwordKey:any, confirmPasswordKey:any) {
+  passwordMatchingCheck(passwordKey: any, confirmPasswordKey: any) {
     return (group: FormGroup) => {
       const password = group.controls[passwordKey];
       const confirmPassword = group.controls[confirmPasswordKey];
@@ -47,8 +49,8 @@ export class SignUpComponent implements OnInit {
     };
   }
 
-  register(){
-    if(this.signup.valid) {
+  register() {
+    if (this.signup.valid) {
       console.log("Login Data :", this.signup.value);
 
       let sendData = {
@@ -60,14 +62,15 @@ export class SignUpComponent implements OnInit {
       }
 
       this.userService.registerUser(sendData).subscribe((result: any) => {
-        console.log('Signed Up Is Successfull',result);
+        console.log('Signed Up Is Successfull', result);
         this.snackBar.open("Signed Up Is Successfull!", '', {
-          duration:2000
+          duration: 2000
         });
+        this.route.navigateByUrl('/login')
       })
-    }else {
-      this.snackBar.open("please enter valid credential's",'', {
-        duration:2000
+    } else {
+      this.snackBar.open("please enter valid credential's", '', {
+        duration: 2000
       });
     }
   }

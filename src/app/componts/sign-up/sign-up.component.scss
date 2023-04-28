@@ -124,8 +124,8 @@
 }
 
 .email-field-inner {
-   width: 100%;
-  }
+  width: 100%;
+}
 
 .use-email-button-div {
   display: flex;
@@ -262,10 +262,9 @@ footer {
 }
 
 @media screen and (max-width: 1112px) {
-  
   .form-container {
-     max-height: 750px;
-    max-width: 550px; 
+    max-height: 750px;
+    max-width: 550px;
     // //   width: 50%;
     // height: 85%;
     display: flex;
@@ -287,72 +286,68 @@ footer {
     display: flex;
     flex-direction: row;
     width: 100%;
+  }
+
+  .all-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* width: 400px; */
+    justify-content: flex-end;
+    max-width: 200px;
+  }
+  .lang-select {
+    font-size: 12px;
+    line-height: 1.4;
+    /* width: 400px; */
+    height: auto;
+    margin-bottom: 0;
+    /* margin-right: 30px; */
+    margin-top: 10px;
+    max-width: 200px;
+  }
+  footer {
+    height: 56px;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    align-items: center;
+    font-size: 12px;
+    line-height: 1.4;
+  }
 }
 
-.all-links {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  /* width: 400px; */
-  justify-content: flex-end;
-  max-width: 200px;
-}
-.lang-select {
-  font-size: 12px;
-  line-height: 1.4;
-  /* width: 400px; */
-  height: auto;
-  margin-bottom: 0;
-  /* margin-right: 30px; */
-  margin-top: 10px;
-  max-width: 200px;
-}
-footer {
-  height: 56px;
-  display: flex;
-  flex-direction: row;
-  /* justify-content: space-between; */
-  align-items: center;
-  font-size: 12px;
-  line-height: 1.4;
-}
-}
-
-@media screen and (max-width: 568px ) {
+@media screen and (max-width: 568px) {
   .form-container {
     max-height: 750px;
-   max-width: 450px; 
-   // //   width: 50%;
-   // height: 85%;
-   display: flex;
-   flex-direction: row;
-   /* border-radius: 1%; */
-   border: 1px solid transparent;
-   border-radius: 12px;
- }
- .form {
-  padding: 45px 35px 30px;
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-}
+    max-width: 450px;
+    // //   width: 50%;
+    // height: 85%;
+    display: flex;
+    flex-direction: row;
+    /* border-radius: 1%; */
+    border: 1px solid transparent;
+    border-radius: 12px;
+  }
+  .form {
+    padding: 45px 35px 30px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
 
+  .first-last-name {
+    display: flex;
+    // justify-content: space-between;
+    gap: 0px;
+    flex-direction: column;
+  }
 
+  .email-field-inner {
+    width: 100%;
+  }
 
-.first-last-name {
-  display: flex;
-  // justify-content: space-between;
-  gap: 0px;
-  flex-direction: column;
-
-}
-
-.email-field-inner {
- width: 100%;
-}
-
-footer {
-  display: none;
-}
-  
+  footer {
+    display: none;
+  }
 }

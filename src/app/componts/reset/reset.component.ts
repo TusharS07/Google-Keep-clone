@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-reset',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./reset.component.scss']
 })
 export class ResetComponent {
+
+  constructor(private route: Router) { }
+
+  forgotPassword() {
+    this.route.navigateByUrl('/forgot-password')
+  }
 
 }
