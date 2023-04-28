@@ -16,6 +16,15 @@ import { ResetComponent } from './componts/reset/reset.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { DashbordComponent } from './componts/dashbord/dashbord.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatListModule} from '@angular/material/list';
+import {MatIconModule} from '@angular/material/icon';
+
+
+
+
 
 
 
@@ -25,7 +34,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     SignUpComponent,
     LoginComponent,
     ForgotPasswordComponent,
-    ResetComponent
+    ResetComponent,
+    DashbordComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +49,11 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatListModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
