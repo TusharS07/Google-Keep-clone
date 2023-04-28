@@ -1,7 +1,9 @@
+import { group } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserService } from 'src/app/Service/UserService/user.service';
+
 
 @Component({
   selector: 'app-sign-up',
@@ -12,9 +14,12 @@ export class SignUpComponent implements OnInit {
  
 
   signup! : FormGroup;
+  hide:Boolean = true;
 
 
-  constructor( private  formBuilder:FormBuilder , private userService:UserService, private snackBar: MatSnackBar){}
+  constructor( private  formBuilder:FormBuilder ,
+     private userService:UserService,
+      private snackBar: MatSnackBar){}
   
   ngOnInit(): void {
     this.signup = this.formBuilder.group({
@@ -23,8 +28,23 @@ export class SignUpComponent implements OnInit {
       email : ['' ,[Validators.required , Validators.email]],
       password:['',[Validators.required, Validators.minLength(6)]],
       confirmPassword: ['',[Validators.required, Validators.minLength(6)]]
-    })
+    },{
+      validator: this.passwordMatchingCheck('password', 'confirmPassword')
+    });
 
+  }
+
+  showPassword() {
+    this.hide = !this.hide;
+  }
+
+  passwordMatchingCheck(passwordKey:any, confirmPasswordKey:any) {
+    return (group: FormGroup) => {
+      const password = group.controls[passwordKey];
+      const confirmPassword = group.controls[confirmPasswordKey];
+
+      return password === confirmPassword ? null : { passwordMismatch: true };
+    };
   }
 
   register(){
@@ -41,10 +61,14 @@ export class SignUpComponent implements OnInit {
 
       this.userService.registerUser(sendData).subscribe((result: any) => {
         console.log('Signed Up Is Successfull',result);
-        this.snackBar.open("Signed Up Is Successfull!");
+        this.snackBar.open("Signed Up Is Successfull!", '', {
+          duration:2000
+        });
       })
     }else {
-      this.snackBar.open("please enter valid credential's");
+      this.snackBar.open("please enter valid credential's",'', {
+        duration:2000
+      });
     }
   }
 

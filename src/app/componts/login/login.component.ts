@@ -10,7 +10,7 @@ import { UserService } from 'src/app/Service/UserService/user.service';
 })
 export class LoginComponent implements OnInit {
 
-  login! :  FormGroup 
+  login! :  FormGroup;
 
   constructor( private  formBuilder:FormBuilder , private userService:UserService, private snackBar: MatSnackBar){}
   ngOnInit(): void {
@@ -20,8 +20,6 @@ export class LoginComponent implements OnInit {
     })
 
   }
- 
-
 
   loginUser(){
     if(this.login.valid) {
@@ -34,10 +32,14 @@ export class LoginComponent implements OnInit {
 
       this.userService.login(sendData).subscribe((result: any) => {
         console.log(result);
-        this.snackBar.open("Login Successfully!");
+        this.snackBar.open("Login Successfully!",'',{
+          duration:2000
+        });
       })
     } else {
-      this.snackBar.open("please enter valid credential's");
+      this.snackBar.open("please enter valid credential's",'',{
+        duration:2000
+      });
     }
 
   }

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpService } from '../HttpService/http.service';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 
 
 @Injectable({
@@ -7,13 +8,36 @@ import { HttpService } from '../HttpService/http.service';
 })
 export class UserService {
 
+  token : any
+
   constructor(private HttpService: HttpService) { }
 
+  
+
   registerUser(reqdata:any) {
-   return this.HttpService.PostService("user/userSignUp",reqdata, false, {});
+
+    this.token = localStorage.getItem('token');
+
+    let httpHeadersOption = {
+      headers : new HttpHeaders({ 
+        contentType : 'application/json',
+        authorization : this.token
+      })
+    }
+   return this.HttpService.PostService("user/userSignUp",reqdata, false, httpHeadersOption);
   }
 
   login(reqdata:any) {
-    return this.HttpService.PostService("user/login",reqdata, false, {});
+
+    this.token = localStorage.getItem('token');
+
+    let httpHeadersOption = {
+      headers : new HttpHeaders({ 
+        contentType : 'application/json',
+        authorization : this.token
+      })
+    }
+
+    return this.HttpService.PostService("user/login",reqdata, false, httpHeadersOption);
    }
 }
