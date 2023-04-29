@@ -5,6 +5,7 @@ import { LoginComponent } from './componts/login/login.component';
 import { ForgotPasswordComponent } from './componts/forgot-password/forgot-password.component';
 import { ResetComponent } from './componts/reset/reset.component';
 import { DashbordComponent } from './componts/dashbord/dashbord.component';
+import { AuthenticationGuard } from './authentication.guard';
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -12,7 +13,7 @@ const routes: Routes = [
   {path: 'login', component:LoginComponent },
   {path: 'forgot-password', component:ForgotPasswordComponent },
   {path: 'reset', component:ResetComponent },
-  {path: 'dashbord', component:DashbordComponent}
+  {path: 'dashbord', component:DashbordComponent,canActivate:[AuthenticationGuard]}
 ];
 
 @NgModule({

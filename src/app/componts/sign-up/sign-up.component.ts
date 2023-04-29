@@ -51,7 +51,7 @@ export class SignUpComponent implements OnInit {
 
   register() {
     if (this.signup.valid) {
-      console.log("Login Data :", this.signup.value);
+      // console.log("Login Data :", this.signup.value);
 
       let sendData = {
         firstName: this.signup.value.firstName,

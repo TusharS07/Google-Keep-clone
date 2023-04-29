@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private userService: UserService,
     private snackBar: MatSnackBar) { }
+    
   ngOnInit(): void {
     this.login = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
@@ -28,7 +29,7 @@ export class LoginComponent implements OnInit {
 
   loginUser() {
     if (this.login.valid) {
-      console.log("Login Data :", this.login.value);
+      // console.log("Login Data :", this.login.value);
 
       let sendData = {
         email: this.login.value.email,

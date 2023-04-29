@@ -1,13 +1,14 @@
 <div class="main">
+    <form [formGroup]="reset" (submit)="resetPass()">
     <div class="container">
         <div class="content-container">
             <div class="google-logo">
-                <span class="g">G</span>
-                <span class="o1">o</span>
-                <span class="o2">o</span>
-                <span class="g">g</span>
-                <span class="l">l</span>
-                <span class="e">e</span>
+                <span class="g">F</span>
+            <span class="o1">u</span>
+            <span class="o2">n</span>
+            <span class="g">d</span>
+            <span class="l">o</span>
+            <span class="e">o</span>
             </div>
             <br>
             <div class="form-container">
@@ -23,7 +24,8 @@
                         <p>
                             <mat-form-field appearance="outline" style="width: 100%;">
                                 <mat-label>Phone number or email</mat-label>
-                                <input matInput placeholder="" type="email">
+                                <input matInput placeholder="" type="email" formControlName="email">
+                                <mat-error>enter valid email</mat-error>
                                 <br>
                             </mat-form-field>
                         </p>
@@ -33,7 +35,7 @@
                                 <div class="next-button">
                                     <button mat-raised-button color="primary"
                                         style="background-color: rgb(26,115,232); width: 80px;"
-                                        (click)="forgotPassword()">Next</button>
+                                        >Next</button>
                                 </div>
                             </div>
                         </div>
@@ -42,4 +44,5 @@
             </div>
         </div>
     </div>
+</form>
 </div>

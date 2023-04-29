@@ -40,4 +40,30 @@ export class UserService {
 
     return this.HttpService.PostService("user/login", reqdata, false, httpHeadersOption);
   }
+
+  reset(reqdata: any) {
+    this.token = localStorage.getItem('token');
+
+    let httpHeadersOption = {
+      headers: new HttpHeaders({
+        contentType: 'application/json',
+        authorization: this.token
+      })
+    }
+
+    return this.HttpService.PostService("user/reset", reqdata, false, httpHeadersOption);
+  }
+
+  forgotPassword(reqdata: any) {
+    this.token = localStorage.getItem('token');
+
+    let httpHeadersOption = {
+      headers: new HttpHeaders({
+        contentType: 'application/json',
+        authorization: this.token
+      })
+    }
+
+    return this.HttpService.PostService("user/reset-password", reqdata, false, httpHeadersOption);
+  }
 }
