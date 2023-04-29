@@ -11,59 +11,59 @@ import { UserService } from 'src/app/Service/UserService/user.service';
 })
 export class ForgotPasswordComponent implements OnInit {
 
-forgotPassword!: FormGroup;
-hide: Boolean = true;
+  forgotPassword!: FormGroup;
+  hide: Boolean = true;
 
-constructor(
-  private formBuilder: FormBuilder,
-  private userService: UserService,
-  private snackBar: MatSnackBar
-){}
+  constructor(
+    private formBuilder: FormBuilder,
+    private userService: UserService,
+    private snackBar: MatSnackBar
+  ) { }
 
 
-ngOnInit(): void {
-  this.forgotPassword = this.formBuilder.group({
-    newPassword: ['', [Validators.required, Validators.minLength(6)]],
-    confirmNewPassword: ['', [Validators.required, Validators.minLength(6)]]
+  ngOnInit(): void {
+    this.forgotPassword = this.formBuilder.group({
+      newPassword: ['', [Validators.required, Validators.minLength(6)]],
+      confirmNewPassword: ['', [Validators.required, Validators.minLength(6)]]
+    }
+      //,{
+      //   validator: this.passwordMatchingCheck('newPassword', 'confirmNewPassword')
+      // }
+    );
+
   }
-  //,{
-  //   validator: this.passwordMatchingCheck('newPassword', 'confirmNewPassword')
-  // }
-  );
-
-}
 
 
-passwordMatchingCheck(passwordKey: any, confirmPasswordKey: any) {
-  return (group: FormGroup) => {
-    const password = group.controls[passwordKey];
-    const confirmPassword = group.controls[confirmPasswordKey];
+  passwordMatchingCheck(passwordKey: any, confirmPasswordKey: any) {
+    return (group: FormGroup) => {
+      const password = group.controls[passwordKey];
+      const confirmPassword = group.controls[confirmPasswordKey];
 
-    return password === confirmPassword ? null : { passwordMismatch: true };
-  };
-}
+      return password === confirmPassword ? null : { passwordMismatch: true };
+    };
+  }
 
-showPassword() {
-  this.hide = !this.hide;
-}
+  showPassword() {
+    this.hide = !this.hide;
+  }
 
-submit(){
-  if (this.forgotPassword.valid) {
-    console.log("forgotPassword Data :", this.forgotPassword.value);
+  submit() {
+    if (this.forgotPassword.valid) {
+      console.log("forgotPassword Data :", this.forgotPassword.value);
 
 
-    this.userService.forgotPassword(this.forgotPassword.value.confirmNewPassword).subscribe((result: any) => {
-      console.log(result);
-      this.snackBar.open(result.message, '', {
+      this.userService.forgotPassword(this.forgotPassword.value.confirmNewPassword).subscribe((result: any) => {
+        console.log(result);
+        this.snackBar.open(result.message, '', {
+          duration: 2000
+        });
+      })
+    } else {
+      this.snackBar.open("please enter valid credential's", '', {
         duration: 2000
       });
-    })
-  } else {
-    this.snackBar.open("please enter valid credential's", '', {
-      duration: 2000
-    });
+    }
   }
-}
-  
+
 
 }

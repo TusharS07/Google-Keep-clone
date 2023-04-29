@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private userService: UserService,
     private snackBar: MatSnackBar) { }
-    
+
   ngOnInit(): void {
     this.login = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],

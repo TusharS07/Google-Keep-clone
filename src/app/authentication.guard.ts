@@ -11,15 +11,15 @@ export class AuthenticationGuard implements CanActivate {
   constructor(
     private authguardService: AuthguardServiceService,
     private route: Router
-    ){
+  ) {
 
   }
-  
+
   canActivate(): boolean {
     if (!this.authguardService.gettoken()) {
       this.route.navigateByUrl('/login');
     }
     return this.authguardService.gettoken();
   }
-  
+
 }

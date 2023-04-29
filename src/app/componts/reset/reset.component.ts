@@ -18,20 +18,20 @@ export class ResetComponent implements OnInit {
     private formBuilder: FormBuilder,
     private userService: UserService,
     private snackBar: MatSnackBar
-    ) { }
+  ) { }
 
   ngOnInit(): void {
     this.reset = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]]
     })
-    
+
   }
 
   // forgotPassword() {
   //   // this.route.navigateByUrl('/forgot-password')
   // }
 
-  resetPass(){
+  resetPass() {
     if (this.reset.valid) {
       // console.log("reset Data :", this.reset.value);
 

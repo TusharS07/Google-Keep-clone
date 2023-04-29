@@ -1,41 +1,41 @@
 <div class="main">
     <form [formGroup]="reset" (submit)="resetPass()">
-    <div class="container">
-        <div class="content-container">
-            <div class="google-logo">
-                <span class="g">F</span>
-            <span class="o1">u</span>
-            <span class="o2">n</span>
-            <span class="g">d</span>
-            <span class="l">o</span>
-            <span class="e">o</span>
-            </div>
-            <br>
-            <div class="form-container">
-                <div class="heading-text">
-                    <h1><span>Find your email</span></h1>
-                    <div class="signIn-msg">
-                        <span>Enter your phone number or recovery email</span>
-                    </div>
+        <div class="container">
+            <div class="content-container">
+                <div class="google-logo">
+                    <span class="g">F</span>
+                    <span class="o1">u</span>
+                    <span class="o2">n</span>
+                    <span class="g">d</span>
+                    <span class="l">o</span>
+                    <span class="e">o</span>
                 </div>
+                <br>
+                <div class="form-container">
+                    <div class="heading-text">
+                        <h1><span>Find your email</span></h1>
+                        <div class="signIn-msg">
+                            <span>Enter your phone number or recovery email</span>
+                        </div>
+                    </div>
 
-                <div class="input-container">
-                    <div class="input-data">
-                        <p>
-                            <mat-form-field appearance="outline" style="width: 100%;">
-                                <mat-label>Phone number or email</mat-label>
-                                <input matInput placeholder="" type="email" formControlName="email">
-                                <mat-error>enter valid email</mat-error>
-                                <br>
-                            </mat-form-field>
-                        </p>
+                    <div class="input-container">
+                        <div class="input-data">
+                            <p>
+                                <mat-form-field appearance="outline" style="width: 100%;">
+                                    <mat-label>Phone number or email</mat-label>
+                                    <input matInput placeholder="" type="email" formControlName="email">
+                                    <mat-error>enter valid email</mat-error>
+                                    <br>
+                                </mat-form-field>
+                            </p>
 
-                        <div class="button-all">
-                            <div class="buttonss">
-                                <div class="next-button">
-                                    <button mat-raised-button color="primary"
-                                        style="background-color: rgb(26,115,232); width: 80px;"
-                                        >Next</button>
+                            <div class="button-all">
+                                <div class="buttonss">
+                                    <div class="next-button">
+                                        <button mat-raised-button color="primary"
+                                            style="background-color: rgb(26,115,232); width: 80px;">Next</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -43,6 +43,5 @@
                 </div>
             </div>
         </div>
-    </div>
-</form>
+    </form>
 </div>
