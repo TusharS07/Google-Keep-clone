@@ -22,6 +22,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import { AuthguardServiceService } from './Service/AuthguardService/authguard-service.service';
+import {MatMenuModule} from '@angular/material/menu';
 
 
 
@@ -54,7 +55,8 @@ import { AuthguardServiceService } from './Service/AuthguardService/authguard-se
     MatSidenavModule,
     MatToolbarModule,
     MatListModule,
-    MatIconModule
+    MatIconModule,
+    MatMenuModule
   ],
   providers: [
     AuthguardServiceService

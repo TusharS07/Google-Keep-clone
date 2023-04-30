@@ -8,6 +8,7 @@ import { ChangeDetectorRef, Component, OnDestroy } from '@angular/core';
 })
 export class DashbordComponent implements OnDestroy {
 
+  isSelected = false;
   mobileQuery: MediaQueryList;
 
   fillerNav = Array.from({ length: 50 }, (_, i) => `Nav Item ${i + 1}`);
@@ -32,5 +33,9 @@ export class DashbordComponent implements OnDestroy {
 
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
+  }
+
+  onDivClick(){
+    this.isSelected = !this.isSelected;
   }
 }
