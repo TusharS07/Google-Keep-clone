@@ -23,6 +23,10 @@ import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import { AuthguardServiceService } from './Service/AuthguardService/authguard-service.service';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import { CreateNotesComponent } from './componts/create-notes/create-notes.component';
+
+
 
 
 
@@ -37,7 +41,8 @@ import {MatMenuModule} from '@angular/material/menu';
     LoginComponent,
     ForgotPasswordComponent,
     ResetComponent,
-    DashbordComponent
+    DashbordComponent,
+    CreateNotesComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +61,8 @@ import {MatMenuModule} from '@angular/material/menu';
     MatToolbarModule,
     MatListModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule,
+    MatTooltipModule
   ],
   providers: [
     AuthguardServiceService

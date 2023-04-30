@@ -1,10 +1,12 @@
 import { MediaMatcher } from '@angular/cdk/layout';
 import { ChangeDetectorRef, Component, OnDestroy } from '@angular/core';
+import {ViewEncapsulation} from '@angular/core';
 
 @Component({
   selector: 'app-dashbord',
   templateUrl: './dashbord.component.html',
-  styleUrls: ['./dashbord.component.scss']
+  styleUrls: ['./dashbord.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class DashbordComponent implements OnDestroy {
 
