@@ -26,7 +26,7 @@
 
 .mat-drawer.mat-drawer-side {
   z-index: 2;
-  min-width: 280px;
+  min-width: 300px;
   border-right: none;
 }
 
@@ -342,7 +342,7 @@ button {
   border-bottom-right-radius: 50px;
   border-top-right-radius: 50px;
   // border-color: rgba(0, 0, 0, .1);
-  border: 1px solid rgba(0, 0, 0, 0.793);
+  // border: 0.2px solid rgba(0, 0, 0, 0.793);
 }
 
 // ::ng-deep .mat-mdc-list-item-interactive {
