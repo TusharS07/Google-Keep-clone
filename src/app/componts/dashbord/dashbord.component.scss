@@ -55,6 +55,15 @@ h1.example-app-name {
   flex: 1 0 auto;
 }
 
+.mat-drawer-content {
+  position: relative;
+  z-index: 1;
+  display: block;
+  height: 100%;
+  overflow: auto;
+  background-color: #fff;
+}
+
 /*************************************/
 .middle-searchBar-Buttons {
   justify-content: flex-start;
@@ -175,7 +184,7 @@ button {
   gap: 7px;
 }
 
-.right-button{
+.right-button {
   background-size: 24px 24px;
   box-sizing: border-box;
   height: 48px;
@@ -353,7 +362,7 @@ button {
   border-bottom-right-radius: 50px;
   border-top-right-radius: 50px;
   padding: 0%;
-} 
+}
 // ::ng-deep .mat-drawer {
 //   border: none;
 //   background-color: #fafafa;
