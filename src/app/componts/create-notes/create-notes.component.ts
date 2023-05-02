@@ -43,7 +43,7 @@ export class CreateNotesComponent implements OnInit {
       console.log(result);
 
       this.snackBar.open(result.status.message, '', {
-        duration: 2000
+        duration: 4000
       });
     });
 

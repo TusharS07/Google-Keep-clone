@@ -24,4 +24,18 @@ export class NotesServiceService {
     }
     return this.HttpService.PostService("notes/addNotes", reqData, true, httpHeadersOption);
   }
+
+
+  getAllNotes(){
+    this.token = localStorage.getItem('token');
+
+    let httpHeadersOption = {
+      headers: new HttpHeaders({
+        contentType: 'application/json',
+        authorization: this.token
+      })
+    }
+    return this.HttpService.GetService("notes/getNotesList", true, httpHeadersOption);
+
+  }
 }

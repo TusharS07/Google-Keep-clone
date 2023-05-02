@@ -50,8 +50,8 @@ export class SignUpComponent implements OnInit {
   }
 
   register() {
-    if (this.signup.valid) {
-      // console.log("Login Data :", this.signup.value);
+    // if (this.signup.valid) {
+      console.log("Login Data :", this.signup.value);
 
       let sendData = {
         firstName: this.signup.value.firstName,
@@ -68,11 +68,11 @@ export class SignUpComponent implements OnInit {
         });
         this.route.navigateByUrl('/login')
       })
-    } else {
-      this.snackBar.open("please enter valid credential's", '', {
-        duration: 2000
-      });
-    }
+    // } else {
+    //   this.snackBar.open("please enter valid credential's", '', {
+    //     duration: 2000
+    //   });
+    // }
   }
 
 }

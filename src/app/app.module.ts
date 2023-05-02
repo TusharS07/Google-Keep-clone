@@ -25,6 +25,9 @@ import { AuthguardServiceService } from './Service/AuthguardService/authguard-se
 import {MatMenuModule} from '@angular/material/menu';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { CreateNotesComponent } from './componts/create-notes/create-notes.component';
+import { DisplayNotesComponent } from './componts/display-notes/display-notes.component';
+import { GetAllNotesComponent } from './componts/get-all-notes/get-all-notes.component';
+import { IconsComponent } from './componts/icons/icons.component';
 
 
 
@@ -42,7 +45,10 @@ import { CreateNotesComponent } from './componts/create-notes/create-notes.compo
     ForgotPasswordComponent,
     ResetComponent,
     DashbordComponent,
-    CreateNotesComponent
+    CreateNotesComponent,
+    DisplayNotesComponent,
+    GetAllNotesComponent,
+    IconsComponent
   ],
   imports: [
     BrowserModule,

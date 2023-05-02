@@ -81,37 +81,37 @@
     <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
       fixedTopGap="56">
       <mat-nav-list>
-        <a mat-list-item routerLink=".">
+        <a mat-list-item routerLink="/dashbord/notes">
           <div class="list-icon">
-            <img class="toolIcon" src="../../../assets/nodes-icon.svg" />
+            <img class="toolIcon" src="../../../assets/nodes-icon.svg" alt="" />
             <span class="iconName">Notes</span>
           </div>
         </a>
 
         <a mat-list-item routerLink=".">
           <div class="list-icon">
-            <img class="toolIcon" src="../../../assets/reminder.svg" />
+            <img class="toolIcon" src="../../../assets/reminder.svg" alt="" />
             <span class="iconName">Reminders</span>
           </div>
         </a>
 
         <a mat-list-item routerLink=".">
           <div class="list-icon">
-            <img class="toolIcon" src="../../../assets/edit_lables.svg" />
+            <img class="toolIcon" src="../../../assets/edit_lables.svg" alt=""/>
             <span class="iconName">Edit labels</span>
           </div>
         </a>
 
         <a mat-list-item routerLink=".">
           <div class="list-icon">
-            <img class="toolIcon" src="../../../assets/archive.svg" />
+            <img class="toolIcon" src="../../../assets/archive.svg"  alt=""/>
             <span class="iconName">Archive</span>
           </div>
         </a>
 
         <a mat-list-item routerLink=".">
           <div class="list-icon">
-            <img class="toolIcon" src="../../../assets/trash.svg" />
+            <img class="toolIcon" src="../../../assets/trash.svg" alt=""/>
             <span class="iconName">Trash</span>
           </div>
         </a>
@@ -119,7 +119,7 @@
     </mat-sidenav>
 
     <mat-sidenav-content>
-      <app-create-notes></app-create-notes>
+      <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>

@@ -42,7 +42,7 @@ export class ResetComponent implements OnInit {
       this.userService.reset(sendData).subscribe((result: any) => {
         console.log(result);
         this.snackBar.open(result.message, '', {
-          duration: 2000
+          duration: 4000
         });
       })
     } else {

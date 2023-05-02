@@ -1,0 +1,28 @@
+
+.allFuntionlity_buttons {
+    // width: 100%;
+    display: flex;
+    flex-wrap: row;
+    align-items: center;
+    padding: 10px 15px;
+    gap: 15px;
+    // justify-content: space-between;
+  }
+  
+  .allFuntionlity-img {
+    color: #202124;
+    opacity: 0.71;
+    height: 22px;
+    width: 30px;
+    // margin: 0 0px 0px 8px;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    cursor: pointer;
+  }
+
+
+  .allFuntionlity-img:hover {
+    opacity: 0.87;
+    background-color: rgba(95, 99, 104, 0.157);
+    border-radius: 50%;
+  }

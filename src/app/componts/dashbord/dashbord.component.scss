@@ -346,7 +346,6 @@ button {
 
 .mat-mdc-list-item-interactive:focus {
   background-color: #fef0c3;
-  // opacity: 0.5;
   filter: brightness(116%);
   border-bottom-right-radius: 50px;
   border-top-right-radius: 50px;
@@ -354,8 +353,7 @@ button {
   // border: 0.2px solid rgba(0, 0, 0, 0.793);
 }
 
-// ::ng-deep .mat-mdc-list-item-interactive {
-// }
+
 .mat-mdc-list-item-interactive:not(:focus):hover::before {
   opacity: 0.2;
   background-color: rgba(128, 126, 126, 0.659);
@@ -363,10 +361,7 @@ button {
   border-top-right-radius: 50px;
   padding: 0%;
 }
-// ::ng-deep .mat-drawer {
-//   border: none;
-//   background-color: #fafafa;
-// }
+
 
 .note1 {
   padding-top: 100px;

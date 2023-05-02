@@ -6,7 +6,7 @@ import { ForgotPasswordComponent } from './componts/forgot-password/forgot-passw
 import { ResetComponent } from './componts/reset/reset.component';
 import { DashbordComponent } from './componts/dashbord/dashbord.component';
 import { AuthenticationGuard } from './authentication.guard';
-import { CreateNotesComponent } from './componts/create-notes/create-notes.component';
+import { GetAllNotesComponent } from './componts/get-all-notes/get-all-notes.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -15,9 +15,15 @@ const routes: Routes = [
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'reset', component: ResetComponent },
 
-  { path: 'dashbord', component: DashbordComponent, canActivate: [AuthenticationGuard] },
+  { path: 'dashbord', component: DashbordComponent, canActivate: [AuthenticationGuard] ,
+    children: [
+      { path: '', redirectTo: 'notes', pathMatch: 'full' },
+      { path: 'notes', component: GetAllNotesComponent }
+    ]
+  },
 
-  { path: 'create_notes', component: CreateNotesComponent}
+
+  
 ];
 
 @NgModule({
