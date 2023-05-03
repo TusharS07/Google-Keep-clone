@@ -9,6 +9,7 @@ import { NotesServiceService } from 'src/app/Service/NotesService/notes-service.
 })
 export class DisplayNotesComponent implements OnInit {
 
+
   @Input() AllNotesData:any
 
   ngOnInit(): void {

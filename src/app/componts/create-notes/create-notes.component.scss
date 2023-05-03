@@ -10,6 +10,7 @@
 .container {
   margin: 35px auto 16px auto;
   position: relative;
+  width: 600px;
 }
 
 .create_node_input {
@@ -217,4 +218,28 @@
   text-align: center;
   margin-right: 5px;
   margin-top: 5px;
+}
+
+
+@media (max-width: 450px) {
+  .container {
+    margin: 35px auto 16px auto;
+    position: relative;
+    width: 300px;
+}
+
+.allFuntionlity_buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 15px;
+  gap: 0px;
+}
+
+.final-close-buttons {
+  display: flex;
+  flex-direction: wrap;
+  justify-content: space-between;
+  margin: 4px 0;
+}
 }

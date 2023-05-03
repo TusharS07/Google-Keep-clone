@@ -9,7 +9,19 @@
         class="allFuntionlity-img">
     <img src="../../../assets/archiveImage.svg" matTooltip="Archive" alt=""
         class="allFuntionlity-img">
-    <img src="../../../assets/more.svg" matTooltip="More" alt="" class="allFuntionlity-img">
+    <div>
+        <img src="../../../assets/more.svg" [matMenuTriggerFor]="menu"
+        matTooltip="More" alt="" class="allFuntionlity-img">
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>Settings</button>
+            <button mat-menu-item>Enables dark theme</button>
+            <button mat-menu-item>send feedback</button>
+            <button mat-menu-item>help</button>
+            <button mat-menu-item>App downloads</button>
+            <button mat-menu-item>Keyboard shortcuts</button>
+          </mat-menu>
+    </div>
+        
     <!-- <img src="../../../assets/undo.svg" matTooltip="Undo" alt="" class="allFuntionlity-img">
     <img src="../../../assets/undo.svg" matTooltip="Redu" alt="" class="allFuntionlity-img redu"> -->
 </div>

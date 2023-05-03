@@ -16,6 +16,11 @@
 .mat-mdc-card-content:first-child {
   padding-top: 0px;
 }
+
+.mat-mdc-card-content {
+  display: block;
+   padding: 0 8px; 
+}
 .main-create-note {
   width: 300px;
   border: 1px solid #e0e0e0;
@@ -41,6 +46,8 @@
 .main-create-note:hover .final-close-buttons {
   visibility: visible;
 }
+
+.final-close-buttons
 
 .create_note-innner {
   background-color: #fff;
@@ -77,7 +84,7 @@
   flex-direction: row;
   justify-content: space-between;
   // min-height: 44px;
-  padding: 16px 16px 0 16px;
+  padding: 16px 16px 0 8px;
 }
 
 .title-input {
@@ -117,7 +124,7 @@
 }
 
 .inputForNote {
-  padding: 4px 16px 12px 16px;
+  padding: 4px 16px 12px 8px;
   color: #202124;
   // min-height: 46px;
 }

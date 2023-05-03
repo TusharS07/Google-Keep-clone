@@ -113,6 +113,11 @@ h1.example-app-name {
   border: 1px solid transparent;
   box-shadow: 0 1px 1px 0 rgba(65, 69, 73, 0.3),
     0 1px 3px 1px rgba(65, 69, 73, 0.15);
+
+    .clearSearch {
+      visibility: visible;
+    }
+
 }
 
 .input-search {
@@ -156,6 +161,7 @@ button {
   opacity: 1;
 
   fill: currentColor;
+  // visibility: hidden;
 }
 
 .search-icon {

@@ -1,6 +1,6 @@
 <div class="main">
-    <div class="container" style="width: 600px;">
-        <div class="create_node_input" style="max-width: 600px;" (click)="hideDiv()" [hidden]="isHidden">
+    <div class="container" >
+        <div class="create_node_input" (click)="hideDiv()" [hidden]="isHidden">
             <div class="show_class">
                 Take a note...
             </div>
@@ -13,7 +13,7 @@
                 aria-label="New Note with Image" style="user-select: none;" tabindex="0"></div>
         </div>
 
-        <div class="main-create-note" style="max-width: 600px;" *ngIf="isHidden">
+        <div class="main-create-note" *ngIf="isHidden">
             <form class="create_note-innner" [formGroup]="notes" (ngSubmit)="createNote()">
                 <div class="take_note_Title">
                     <div class="inputForTitle_And_ping">
@@ -31,6 +31,7 @@
                         <img src="../../../assets/remindMe.svg" matTooltip="Remind me" alt=""
                             class="allFuntionlity-img">
                         <img src="../../../assets/collabrator.svg" matTooltip="collabrator" alt=""
+                        3333
                             class="allFuntionlity-img">
                         <img src="../../../assets/colorSelect.svg" matTooltip="Background options" alt=""
                             class="allFuntionlity-img">

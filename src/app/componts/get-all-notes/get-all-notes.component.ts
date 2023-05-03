@@ -21,10 +21,14 @@ export class GetAllNotesComponent implements OnInit {
 
   }
 
+
+  refreshEvent($event:any){
+    this.getAllNotes()
+  }
   getAllNotes(){
     this.notesService.getAllNotes().subscribe((result:any) =>{
       // console.log(result.data.data);
-      this.AllNotesData = result.data.data
+      this.AllNotesData = result.data.data.reverse();
       console.log(this.AllNotesData);
       
     })

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { NotesServiceService } from 'src/app/Service/NotesService/notes-service.service';
@@ -10,6 +10,8 @@ import { UserService } from 'src/app/Service/UserService/user.service';
   styleUrls: ['./create-notes.component.scss']
 })
 export class CreateNotesComponent implements OnInit {
+
+  @Output() createNoteRefreshEvent = new EventEmitter<any>();
 
   isHidden = false;
   notes! : FormGroup;
@@ -45,6 +47,8 @@ export class CreateNotesComponent implements OnInit {
       this.snackBar.open(result.status.message, '', {
         duration: 4000
       });
+      
+      this.createNoteRefreshEvent.emit(result);
     });
 
     this.notes.reset();
