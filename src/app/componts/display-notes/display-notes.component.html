@@ -1,6 +1,6 @@
 <div class="main">
-    <div class="main-create-note" *ngFor="let Note of AllNotesData">
-        <form class="create_note-innner">
+    <mat-card class="main-create-note" *ngFor="let Note of AllNotesData">
+        <mat-card-content class="create_note-innner">
             <div class="take_note_Title">
                 <div class="inputForTitle_And_ping" >
                     <span class="title-input">{{Note.title}}</span>
@@ -15,6 +15,6 @@
             <div class="final-close-buttons">
                 <app-icons></app-icons>
             </div>
-        </form>
-    </div>
+        </mat-card-content>
+    </mat-card>
 </div>

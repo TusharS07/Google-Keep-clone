@@ -28,6 +28,7 @@ import { CreateNotesComponent } from './componts/create-notes/create-notes.compo
 import { DisplayNotesComponent } from './componts/display-notes/display-notes.component';
 import { GetAllNotesComponent } from './componts/get-all-notes/get-all-notes.component';
 import { IconsComponent } from './componts/icons/icons.component';
+import {MatCardModule} from '@angular/material/card';
 
 
 
@@ -68,7 +69,8 @@ import { IconsComponent } from './componts/icons/icons.component';
     MatListModule,
     MatIconModule,
     MatMenuModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatCardModule
   ],
   providers: [
     AuthguardServiceService

@@ -9,7 +9,14 @@
 }
 
 /************************************/
+.mat-mdc-card-content:last-child {
+  padding-bottom: 0px; 
+}
 
+
+.mat-mdc-card-content:first-child {
+   padding-top: 0px; 
+}
 .main-create-note {
   width: 300px;
     border: 1px solid #e0e0e0;
