@@ -13,7 +13,7 @@
             </div>
 
             <div class="final-close-buttons">
-                <app-icons [notesData]="Note" ></app-icons>
+                <app-icons [notesData]="Note" (refreshTrashAndArchiveNodeTodisplay)="refreshNotesData()"></app-icons>
             </div>
         </mat-card-content>
     </mat-card>

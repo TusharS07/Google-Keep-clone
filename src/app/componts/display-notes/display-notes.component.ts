@@ -31,4 +31,8 @@ export class DisplayNotesComponent implements OnInit {
     });
   }
 
+  refreshNotesData(){
+    this.updateNoteRefreshEvent.emit();
+  }
+
 }

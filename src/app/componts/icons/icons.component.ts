@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { NotesServiceService } from 'src/app/Service/NotesService/notes-service.service';
 
@@ -9,6 +9,7 @@ import { NotesServiceService } from 'src/app/Service/NotesService/notes-service.
 })
 export class IconsComponent {
 
+  @Output() refreshTrashAndArchiveNodeTodisplay = new EventEmitter<any>();
   @Input() notesData:any
 
   constructor(
@@ -25,9 +26,11 @@ export class IconsComponent {
     }
     this.notesService.trashMoveNotes(sendDat).subscribe((result:any) => {
       console.log(result);
+      this.refreshTrashAndArchiveNodeTodisplay.emit(result);
       this.snackBar.open('note moved into trash', '', {
         duration: 4000
       });
+
     })
   }
 
@@ -38,6 +41,7 @@ export class IconsComponent {
     }
     this.notesService.archiveMoveNotes(sendDat).subscribe((result:any) => {
       console.log(result);
+      this.refreshTrashAndArchiveNodeTodisplay.emit(result);
       this.snackBar.open('note moved into archive', '', {
         duration: 4000
       });
