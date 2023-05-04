@@ -2,7 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { NotesServiceService } from 'src/app/Service/NotesService/notes-service.service';
-import { UserService } from 'src/app/Service/UserService/user.service';
+
 
 @Component({
   selector: 'app-create-notes',
@@ -13,7 +13,7 @@ export class CreateNotesComponent implements OnInit {
 
   @Output() createNoteRefreshEvent = new EventEmitter<any>();
 
-  isHidden = false;
+  hidden:boolean = false;
   notes! : FormGroup;
 
   constructor(
@@ -32,7 +32,10 @@ export class CreateNotesComponent implements OnInit {
   
 
   hideDiv() {
-    this.isHidden = !this.isHidden;
+    console.log(this.hidden);
+    
+    this.hidden = !this.hidden;
+    console.log(this.hidden);
   }
 
   createNote(){
@@ -52,6 +55,6 @@ export class CreateNotesComponent implements OnInit {
     });
 
     this.notes.reset();
-    this.isHidden = !this.isHidden;
+    this.hidden = !this.hidden;
   }
 }

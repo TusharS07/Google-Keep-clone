@@ -1,6 +1,6 @@
 <div class="main">
     <div class="container" >
-        <div class="create_node_input" (click)="hideDiv()" [hidden]="isHidden">
+        <div class="create_node_input" (click)="hideDiv()" *ngIf="!hidden">
             <div class="show_class">
                 Take a note...
             </div>
@@ -13,8 +13,8 @@
                 aria-label="New Note with Image" style="user-select: none;" tabindex="0"></div>
         </div>
 
-        <div class="main-create-note" *ngIf="isHidden">
-            <form class="create_note-innner" [formGroup]="notes" (ngSubmit)="createNote()">
+        <div class="main-create-note" *ngIf="hidden">
+            <form class="create_note-innner" [formGroup]="notes" >
                 <div class="take_note_Title">
                     <div class="inputForTitle_And_ping">
                         <input type="text" class="title-input" placeholder="Title" formControlName="title">
@@ -31,7 +31,6 @@
                         <img src="../../../assets/remindMe.svg" matTooltip="Remind me" alt=""
                             class="allFuntionlity-img">
                         <img src="../../../assets/collabrator.svg" matTooltip="collabrator" alt=""
-                        3333
                             class="allFuntionlity-img">
                         <img src="../../../assets/colorSelect.svg" matTooltip="Background options" alt=""
                             class="allFuntionlity-img">
@@ -44,7 +43,7 @@
                         <img src="../../../assets/undo.svg" matTooltip="Redu" alt="" class="allFuntionlity-img redu">
                     </div>
 
-                    <button mat-button class="close-button">Close</button>
+                    <button mat-button class="close-button" (click)="createNote()">Close</button>
                 </div>
             </form>
         </div>
