@@ -1,8 +1,8 @@
 <div class="main">
-    <mat-card class="main-create-note" *ngFor="let Note of AllNotesData" >
+    <mat-card class="main-create-note" *ngFor="let Note of AllNotesData">
         <mat-card-content class="create_note-innner">
             <div class="take_note_Title" (click)="openDialog(Note)">
-                <div class="inputForTitle_And_ping" >
+                <div class="inputForTitle_And_ping">
                     <span class="title-input">{{Note.title}}</span>
                     <img src="../../../assets/ping.svg" alt="" class="ping-img">
                 </div>

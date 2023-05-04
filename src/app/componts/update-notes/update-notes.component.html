@@ -1,22 +1,24 @@
 <mat-card class="main-create-note">
-    <mat-card-content class="create_note-innner" >
+    <mat-card-content class="create_note-innner">
         <div class="take_note_Title">
             <div class="inputForTitle_And_ping">
-                <textarea  class="title-input" placeholder="Title" [(ngModel)]="title" (input)="autoResize($event.target)" ></textarea>
+                <textarea class="title-input" placeholder="Title" [(ngModel)]="title"
+                    (input)="autoResize($event.target)"></textarea>
                 <img src="../../../assets/ping.svg" alt="" class="ping-img">
             </div>
 
             <div class="inputForNote">
-                <textarea  type="text" class="title-input" placeholder="Take a note..." [(ngModel)]="note" (input)="autoResize($event.target)"></textarea>
+                <textarea type="text" class="title-input" placeholder="Take a note..." [(ngModel)]="note"
+                    (input)="autoResize($event.target)"></textarea>
             </div>
         </div>
 
         <div class="final-close-buttons">
-           <app-icons></app-icons>
-           <div class="final-close-buttons">
-            <img src="../../../assets/undo.svg" matTooltip="Undo" alt="" class="allFuntionlity-img">
-            <img src="../../../assets/undo.svg" matTooltip="Redu" alt="" class="allFuntionlity-img redu">
-           </div>
+            <app-icons></app-icons>
+            <div class="final-close-buttons">
+                <img src="../../../assets/undo.svg" matTooltip="Undo" alt="" class="allFuntionlity-img">
+                <img src="../../../assets/undo.svg" matTooltip="Redu" alt="" class="allFuntionlity-img redu">
+            </div>
             <button mat-button class="close-button" (click)="updateNote()">Close</button>
         </div>
     </mat-card-content>

@@ -13,7 +13,7 @@ export class TrashNotesComponent implements OnInit {
 
   constructor(
     private notesService: NotesServiceService
-  ){
+  ) {
 
   }
   ngOnInit(): void {
@@ -21,13 +21,11 @@ export class TrashNotesComponent implements OnInit {
   }
 
 
-  showTrashNotesList(){
- this.notesService.getTrashNotesList().subscribe((result:any) =>{
+  showTrashNotesList() {
+    this.notesService.getTrashNotesList().subscribe((result: any) => {
       // console.log(result.data.data);
       this.allTrashNotesData = result.data.data.reverse();
       console.log(this.allTrashNotesData);
-      
-      
     })
   }
 }

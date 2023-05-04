@@ -1,17 +1,13 @@
 <div class="allFuntionlity_buttons">
-    <img src="../../../assets/remindMe.svg" matTooltip="Remind me" alt=""
-        class="allFuntionlity-img">
-    <img src="../../../assets/collabrator.svg" matTooltip="collabrator" alt=""
-        class="allFuntionlity-img">
-    <img src="../../../assets/colorSelect.svg" matTooltip="Background options" alt=""
-        class="allFuntionlity-img">
-    <img src="../../../assets/AddImage.svg" matTooltip="Add image" alt=""
-        class="allFuntionlity-img">
-    <img src="../../../assets/archiveImage.svg" matTooltip="Archive" alt=""
-        class="allFuntionlity-img" (click)="moveToArchive()" >
+    <img src="../../../assets/remindMe.svg" matTooltip="Remind me" alt="" class="allFuntionlity-img">
+    <img src="../../../assets/collabrator.svg" matTooltip="collabrator" alt="" class="allFuntionlity-img">
+    <img src="../../../assets/colorSelect.svg" matTooltip="Background options" alt="" class="allFuntionlity-img">
+    <img src="../../../assets/AddImage.svg" matTooltip="Add image" alt="" class="allFuntionlity-img">
+    <img src="../../../assets/archiveImage.svg" matTooltip="Archive" alt="" class="allFuntionlity-img"
+        (click)="moveToArchive()">
     <div>
-        <img src="../../../assets/more.svg" [matMenuTriggerFor]="menu"
-        matTooltip="More" alt="" class="allFuntionlity-img">
+        <img src="../../../assets/more.svg" [matMenuTriggerFor]="menu" matTooltip="More" alt=""
+            class="allFuntionlity-img">
         <mat-menu #menu="matMenu">
             <button mat-menu-item (click)="moveToTrash()">Delete note</button>
             <button mat-menu-item>Add label</button>
@@ -19,9 +15,9 @@
             <button mat-menu-item>Make a copy</button>
             <button mat-menu-item>Show checkboxes</button>
             <button mat-menu-item>Copy to Google Docs</button>
-          </mat-menu>
+        </mat-menu>
     </div>
-        
+
     <!-- <img src="../../../assets/undo.svg" matTooltip="Undo" alt="" class="allFuntionlity-img">
     <img src="../../../assets/undo.svg" matTooltip="Redu" alt="" class="allFuntionlity-img redu"> -->
 </div>

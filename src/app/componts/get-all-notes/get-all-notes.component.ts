@@ -17,23 +17,23 @@ export class GetAllNotesComponent implements OnInit {
   constructor(
     private snackBar: MatSnackBar,
     private notesService: NotesServiceService
-  ){
+  ) {
 
   }
 
 
-  refreshEvent($event:any){
+  refreshEvent($event: any) {
     this.getAllNotes()
   }
-  getAllNotes(){
-    this.notesService.getAllNotes().subscribe((result:any) =>{
+  getAllNotes() {
+    this.notesService.getAllNotes().subscribe((result: any) => {
       // console.log(result.data.data);
       this.AllNotesData = result.data.data.reverse();
       console.log(this.AllNotesData);
-      this.AllNotesData = this.AllNotesData.filter((notes:any) => {
+      this.AllNotesData = this.AllNotesData.filter((notes: any) => {
         return notes.isDeleted === false && notes.isArchived === false
       })
-      
+
     })
   }
 }

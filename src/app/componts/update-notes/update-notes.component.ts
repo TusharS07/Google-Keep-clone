@@ -1,5 +1,5 @@
-import {Component, EventEmitter, Inject} from '@angular/core';
-import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
+import { Component, EventEmitter, Inject } from '@angular/core';
+import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { NotesServiceService } from 'src/app/Service/NotesService/notes-service.service';
 
@@ -10,11 +10,11 @@ import { NotesServiceService } from 'src/app/Service/NotesService/notes-service.
 })
 export class UpdateNotesComponent {
 
-  
-  height:any;
-  note:any;
-  title:any;
-  noteId:any;
+
+  height: any;
+  note: any;
+  title: any;
+  noteId: any;
 
   constructor(
     private notesService: NotesServiceService,
@@ -45,11 +45,10 @@ export class UpdateNotesComponent {
     }
     this.notesService.updateNotes(updatedData).subscribe((result) => {
       console.log(result);
-      
-      
+
       this.dialogRef.close();
     })
-    
+
   }
 }
 function Output(): (target: UpdateNotesComponent, propertyKey: "createNoteRefreshEvent") => void {

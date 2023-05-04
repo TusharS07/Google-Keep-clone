@@ -1,6 +1,6 @@
 import { MediaMatcher } from '@angular/cdk/layout';
 import { ChangeDetectorRef, Component, OnDestroy } from '@angular/core';
-import {ViewEncapsulation} from '@angular/core';
+import { ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-dashbord',
@@ -13,7 +13,7 @@ export class DashbordComponent implements OnDestroy {
   isSelected = false;
   mobileQuery: MediaQueryList;
 
- 
+
 
   private _mobileQueryListener: () => void;
 
@@ -27,9 +27,7 @@ export class DashbordComponent implements OnDestroy {
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }
 
-  onDivClick(){
+  onDivClick() {
     this.isSelected = !this.isSelected;
   }
-
-
 }

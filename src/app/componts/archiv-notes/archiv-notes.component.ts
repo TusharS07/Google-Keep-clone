@@ -12,7 +12,7 @@ export class ArchivNotesComponent {
 
   constructor(
     private notesService: NotesServiceService
-  ){
+  ) {
 
   }
   ngOnInit(): void {
@@ -20,13 +20,13 @@ export class ArchivNotesComponent {
   }
 
 
-  showTrashNotesList(){
- this.notesService.getArchivNotesList().subscribe((result:any) =>{
+  showTrashNotesList() {
+    this.notesService.getArchivNotesList().subscribe((result: any) => {
       // console.log(result.data.data);
       this.allArchiveNotesData = result.data.data.reverse();
       console.log(this.allArchiveNotesData);
-      
-      
+
+
     })
   }
 }
