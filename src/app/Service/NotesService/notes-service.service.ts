@@ -38,4 +38,70 @@ export class NotesServiceService {
     return this.HttpService.GetService("notes/getNotesList", true, httpHeadersOption);
 
   }
+
+
+  updateNotes(reqData: any){
+    this.token = localStorage.getItem('token');
+
+    let httpHeadersOption = {
+      headers: new HttpHeaders({
+        contentType: 'application/json',
+        authorization: this.token
+      })
+    }
+    return this.HttpService.PostService("notes/updateNotes", reqData, true, httpHeadersOption);
+  }
+
+
+  trashMoveNotes(reqData: any) {
+    this.token = localStorage.getItem('token');
+
+    let httpHeadersOption = {
+      headers: new HttpHeaders({
+        contentType: 'application/json',
+        authorization: this.token
+      })
+    }
+    return this.HttpService.PostService("notes/trashNotes", reqData,true, httpHeadersOption);
+  }
+
+
+  getTrashNotesList(){
+    this.token = localStorage.getItem('token');
+
+    let httpHeadersOption = {
+      headers: new HttpHeaders({
+        contentType: 'application/json',
+        authorization: this.token
+      })
+    }
+
+    return this.HttpService.GetService("notes/getTrashNotesList", true, httpHeadersOption);
+  }
+
+  archiveMoveNotes(reqData: any) {
+    this.token = localStorage.getItem('token');
+
+    let httpHeadersOption = {
+      headers: new HttpHeaders({
+        contentType: 'application/json',
+        authorization: this.token
+      })
+    }
+    return this.HttpService.PostService("notes/archiveNotes", reqData,true, httpHeadersOption);
+  }
+
+  getArchivNotesList(){
+    this.token = localStorage.getItem('token');
+
+    let httpHeadersOption = {
+      headers: new HttpHeaders({
+        contentType: 'application/json',
+        authorization: this.token
+      })
+    }
+
+    return this.HttpService.GetService("notes/getArchiveNotesList", true, httpHeadersOption);
+  }
+
 }

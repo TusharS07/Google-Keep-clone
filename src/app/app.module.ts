@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {MatDialogModule} from '@angular/material/dialog';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignUpComponent } from './componts/sign-up/sign-up.component';
@@ -29,6 +29,9 @@ import { DisplayNotesComponent } from './componts/display-notes/display-notes.co
 import { GetAllNotesComponent } from './componts/get-all-notes/get-all-notes.component';
 import { IconsComponent } from './componts/icons/icons.component';
 import {MatCardModule} from '@angular/material/card';
+import { UpdateNotesComponent } from './componts/update-notes/update-notes.component';
+import { TrashNotesComponent } from './componts/trash-notes/trash-notes.component';
+import { ArchivNotesComponent } from './componts/archiv-notes/archiv-notes.component';
 
 
 
@@ -43,7 +46,10 @@ import {MatCardModule} from '@angular/material/card';
     CreateNotesComponent,
     DisplayNotesComponent,
     GetAllNotesComponent,
-    IconsComponent
+    IconsComponent,
+    UpdateNotesComponent,
+    TrashNotesComponent,
+    ArchivNotesComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +70,8 @@ import {MatCardModule} from '@angular/material/card';
     MatIconModule,
     MatMenuModule,
     MatTooltipModule,
-    MatCardModule
+    MatCardModule,
+    MatDialogModule
   ],
   providers: [
     AuthguardServiceService

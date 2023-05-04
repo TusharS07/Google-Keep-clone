@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { NotesServiceService } from 'src/app/Service/NotesService/notes-service.service';
 
 @Component({
   selector: 'app-icons',
@@ -7,4 +9,38 @@ import { Component } from '@angular/core';
 })
 export class IconsComponent {
 
+  @Input() notesData:any
+
+  constructor(
+    private snackBar: MatSnackBar,
+    private notesService: NotesServiceService
+  ){}
+
+  moveToTrash(){
+    // console.log(this.notesData);
+    
+    let sendDat= {
+      noteIdList: [this.notesData.id],
+      isDeleted: true
+    }
+    this.notesService.trashMoveNotes(sendDat).subscribe((result:any) => {
+      console.log(result);
+      this.snackBar.open('note moved into trash', '', {
+        duration: 4000
+      });
+    })
+  }
+
+  moveToArchive(){
+    let sendDat= {
+      noteIdList: [this.notesData.id],
+      isArchived: true
+    }
+    this.notesService.archiveMoveNotes(sendDat).subscribe((result:any) => {
+      console.log(result);
+      this.snackBar.open('note moved into archive', '', {
+        duration: 4000
+      });
+    })
+  }
 }

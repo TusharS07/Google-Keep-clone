@@ -1,2 +1,2 @@
 <app-create-notes (createNoteRefreshEvent)="refreshEvent($event)"></app-create-notes>
-<app-display-notes [AllNotesData]="AllNotesData"></app-display-notes>
+<app-display-notes [AllNotesData]="AllNotesData" (updateNoteRefreshEvent)="refreshEvent($event)"></app-display-notes>

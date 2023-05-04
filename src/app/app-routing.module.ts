@@ -7,6 +7,8 @@ import { ResetComponent } from './componts/reset/reset.component';
 import { DashbordComponent } from './componts/dashbord/dashbord.component';
 import { AuthenticationGuard } from './authentication.guard';
 import { GetAllNotesComponent } from './componts/get-all-notes/get-all-notes.component';
+import { TrashNotesComponent } from './componts/trash-notes/trash-notes.component';
+import { ArchivNotesComponent } from './componts/archiv-notes/archiv-notes.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -18,7 +20,9 @@ const routes: Routes = [
   { path: 'dashbord', component: DashbordComponent, canActivate: [AuthenticationGuard] ,
     children: [
       { path: '', redirectTo: 'notes', pathMatch: 'full' },
-      { path: 'notes', component: GetAllNotesComponent }
+      { path: 'notes', component: GetAllNotesComponent },
+      { path: 'trashNotes', component: TrashNotesComponent },
+      { path: 'archiveNotes', component: ArchivNotesComponent }
     ]
   },
 

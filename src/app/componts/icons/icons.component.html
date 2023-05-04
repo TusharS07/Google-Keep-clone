@@ -8,12 +8,12 @@
     <img src="../../../assets/AddImage.svg" matTooltip="Add image" alt=""
         class="allFuntionlity-img">
     <img src="../../../assets/archiveImage.svg" matTooltip="Archive" alt=""
-        class="allFuntionlity-img">
+        class="allFuntionlity-img" (click)="moveToArchive()" >
     <div>
         <img src="../../../assets/more.svg" [matMenuTriggerFor]="menu"
         matTooltip="More" alt="" class="allFuntionlity-img">
         <mat-menu #menu="matMenu">
-            <button mat-menu-item>Delete note</button>
+            <button mat-menu-item (click)="moveToTrash()">Delete note</button>
             <button mat-menu-item>Add label</button>
             <button mat-menu-item>Add drawing</button>
             <button mat-menu-item>Make a copy</button>

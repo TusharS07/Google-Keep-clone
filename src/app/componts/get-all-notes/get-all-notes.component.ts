@@ -9,7 +9,7 @@ import { NotesServiceService } from 'src/app/Service/NotesService/notes-service.
 })
 export class GetAllNotesComponent implements OnInit {
 
-  AllNotesData:any;
+  AllNotesData = []
 
   ngOnInit(): void {
     this.getAllNotes();
@@ -30,6 +30,9 @@ export class GetAllNotesComponent implements OnInit {
       // console.log(result.data.data);
       this.AllNotesData = result.data.data.reverse();
       console.log(this.AllNotesData);
+      this.AllNotesData = this.AllNotesData.filter((notes:any) => {
+        return notes.isDeleted === false && notes.isArchived === false
+      })
       
     })
   }
