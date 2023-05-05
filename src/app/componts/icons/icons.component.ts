@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { NotesServiceService } from 'src/app/Service/NotesService/notes-service.service';
 
@@ -7,15 +7,25 @@ import { NotesServiceService } from 'src/app/Service/NotesService/notes-service.
   templateUrl: './icons.component.html',
   styleUrls: ['./icons.component.scss']
 })
-export class IconsComponent {
+export class IconsComponent implements OnInit {
 
   @Output() refreshTrashAndArchiveNodeTodisplay = new EventEmitter<any>();
   @Input() notesData: any
+
+  show:boolean = true;
 
   constructor(
     private snackBar: MatSnackBar,
     private notesService: NotesServiceService
   ) { }
+
+  ngOnInit(): void {
+   if (this.notesData.isDeleted === true) {
+    this.show = false;
+   }else{
+    this.show = true;
+   }
+  }
 
   moveToTrash() {
     // console.log(this.notesData);
@@ -45,6 +55,21 @@ export class IconsComponent {
       this.snackBar.open('note moved into archive', '', {
         duration: 4000
       });
+    })
+  }
+
+
+  deleteForeverNotes(){
+    let sendDat = {
+      noteIdList: [this.notesData.id]
+    }
+    this.notesService.deleteForeverNotes(sendDat).subscribe((result: any) => {
+      console.log(result);
+      this.refreshTrashAndArchiveNodeTodisplay.emit(result);
+      this.snackBar.open('note deleted', '', {
+        duration: 4000
+      });
+
     })
   }
 }

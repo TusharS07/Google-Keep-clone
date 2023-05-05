@@ -104,4 +104,16 @@ export class NotesServiceService {
     return this.HttpService.GetService("notes/getArchiveNotesList", true, httpHeadersOption);
   }
 
+  deleteForeverNotes(reqData: any){
+    this.token = localStorage.getItem('token');
+
+    let httpHeadersOption = {
+      headers: new HttpHeaders({
+        contentType: 'application/json',
+        authorization: this.token
+      })
+    }
+    return this.HttpService.PostService("notes/deleteForeverNotes", reqData,true, httpHeadersOption);
+  }
+
 }
