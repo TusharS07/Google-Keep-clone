@@ -32,6 +32,8 @@ import {MatCardModule} from '@angular/material/card';
 import { UpdateNotesComponent } from './componts/update-notes/update-notes.component';
 import { TrashNotesComponent } from './componts/trash-notes/trash-notes.component';
 import { ArchivNotesComponent } from './componts/archiv-notes/archiv-notes.component';
+import { FilterNotesForSearchPipe } from './Pipes/FilterPipe/filter-notes-for-search.pipe';
+
 
 
 
@@ -49,7 +51,8 @@ import { ArchivNotesComponent } from './componts/archiv-notes/archiv-notes.compo
     IconsComponent,
     UpdateNotesComponent,
     TrashNotesComponent,
-    ArchivNotesComponent
+    ArchivNotesComponent,
+    FilterNotesForSearchPipe
   ],
   imports: [
     BrowserModule,

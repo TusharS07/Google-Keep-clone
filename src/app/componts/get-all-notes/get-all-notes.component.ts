@@ -16,11 +16,10 @@ export class GetAllNotesComponent implements OnInit {
   }
   constructor(
     private snackBar: MatSnackBar,
-    private notesService: NotesServiceService
+    private notesService: NotesServiceService,
   ) {
 
   }
-
 
   refreshEvent($event: any) {
     this.getAllNotes()

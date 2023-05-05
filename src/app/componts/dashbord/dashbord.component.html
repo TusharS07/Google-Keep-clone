@@ -9,8 +9,7 @@
       <div class="search-bar">
         <form class="search" (click)="onDivClick()" [ngClass]="{'selected': isSelected}">
           <div class="searches-input">
-            <input class="input-search" aria-label="Search" autocomplete="off" placeholder="Search" type="text"
-              aria-hidden="false">
+            <input class="input-search" placeholder="Search" type="search" (keyup)="serchNotes($event)">
           </div>
           <button class="clearSearch" matTooltip="Clear search" aria-label="Close Search" type="button">
             <svg focusable="false" height="24px" viewBox="0 0 24 24" width="24px" xmlns="http://www.w3.org/2000/svg">

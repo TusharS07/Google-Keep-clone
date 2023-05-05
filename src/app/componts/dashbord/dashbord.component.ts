@@ -1,6 +1,7 @@
 import { MediaMatcher } from '@angular/cdk/layout';
 import { ChangeDetectorRef, Component, OnDestroy } from '@angular/core';
 import { ViewEncapsulation } from '@angular/core';
+import { DataServiceService } from '../../Service/DataService/data-service.service';
 
 @Component({
   selector: 'app-dashbord',
@@ -17,7 +18,7 @@ export class DashbordComponent implements OnDestroy {
 
   private _mobileQueryListener: () => void;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private dataServiceService: DataServiceService) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -29,5 +30,9 @@ export class DashbordComponent implements OnDestroy {
 
   onDivClick() {
     this.isSelected = !this.isSelected;
+  }
+
+  serchNotes(event:any){
+    this.dataServiceService.sendSearchValue(event.target.value);
   }
 }
