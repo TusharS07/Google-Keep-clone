@@ -20,6 +20,10 @@ export class TrashNotesComponent implements OnInit {
     this.showTrashNotesList();
   }
 
+  refreshTrashNotes(event:any){
+    this.showTrashNotesList();
+  }
+
 
   showTrashNotesList() {
     this.notesService.getTrashNotesList().subscribe((result: any) => {

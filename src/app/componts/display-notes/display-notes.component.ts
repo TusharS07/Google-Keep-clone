@@ -43,7 +43,7 @@ export class DisplayNotesComponent implements OnInit {
   }
 
   refreshNotesData() {
-    this.updateNoteRefreshEvent.emit();
+    this.updateNoteRefreshEvent.emit();     //for refresh for trash n archive
   }
 
 }
