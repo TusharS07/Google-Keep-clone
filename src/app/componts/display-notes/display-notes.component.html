@@ -1,6 +1,6 @@
 <div class="main">
     <mat-card class="main-create-note" *ngFor="let Note of AllNotesData | filterNotesForSearch : searchText">
-        <mat-card-content class="create_note-innner">
+        <mat-card-content class="create_note-innner" [style.background-color]="Note.color" [style.border-color]="Note.color">
             <div class="take_note_Title" (click)="openDialog(Note)">
                 <div class="inputForTitle_And_ping">
                     <span class="title-input">{{Note.title}}</span>

@@ -14,6 +14,54 @@ export class IconsComponent implements OnInit {
 
   show:boolean = true;
 
+
+  colorsArray:Array<any> = [
+    {
+      colorName: "Red",
+      colorCode: "#f28b82"
+    },
+    {
+      colorName: "Orange",
+      colorCode: "#fbbc04"
+    },
+    {
+      colorName: "Yellow",
+      colorCode: "#fff475"
+    },
+    {
+      colorName: "Green",
+      colorCode: "#ccff90"
+    },
+    {
+      colorName: "Teal",
+      colorCode: "#a7ffeb"
+    },
+    {
+      colorName: "Blue",
+      colorCode: "#cbf0f8"
+    },
+    {
+      colorName: "Dark Blue",
+      colorCode: "#aecbfa"
+    },
+    {
+      colorName: "Purple",
+      colorCode: "#d7aefb"
+    },
+    {
+      colorName: "Pink",
+      colorCode: "#fdcfe8"
+    },
+    {
+      colorName: "Brown",
+      colorCode: "#e6c9a8"
+    },
+    {
+      colorName: "Grey",
+      colorCode: "#e8eaed"
+    }
+  ]
+
   constructor(
     private snackBar: MatSnackBar,
     private notesService: NotesServiceService
@@ -70,6 +118,17 @@ export class IconsComponent implements OnInit {
         duration: 4000
       });
 
+    })
+  }
+
+  changesColorNotes(color:any){
+    let sendDat = {
+      noteIdList: [this.notesData.id],
+      color: color
+    }
+    this.notesService.changesColorNotes(sendDat).subscribe((result: any) => {
+      console.log(result);
+      this.refreshTrashAndArchiveNodeTodisplay.emit(result);
     })
   }
 }

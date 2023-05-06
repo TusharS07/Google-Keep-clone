@@ -116,4 +116,15 @@ export class NotesServiceService {
     return this.HttpService.PostService("notes/deleteForeverNotes", reqData,true, httpHeadersOption);
   }
 
+  changesColorNotes(reqData: any){
+    this.token = localStorage.getItem('token');
+
+    let httpHeadersOption = {
+      headers: new HttpHeaders({
+        contentType: 'application/json',
+        authorization: this.token
+      })
+    }
+    return this.HttpService.PostService("notes/changesColorNotes", reqData,true, httpHeadersOption);
+  }
 }

@@ -101,7 +101,7 @@
 
 .create_note-innner {
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
-  background-color: #fff;
+  // background-color: #fff;
   border-color: #e0e0e0;
   border: 1px solid transparent;
   box-sizing: border-box;
@@ -219,7 +219,35 @@
   margin-right: 5px;
   margin-top: 5px;
 }
+/****************************************************/
+.colorMenu-main{
+  display: flex;
+  flex-direction: column;
+  width: auto;
+}
 
+.colors{
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  padding: 0px 8px 0px 8px;
+  gap: 5px;
+}
+
+.color-button{
+  height: 26px;
+  width: 24px;
+  border-radius: 50%;
+  // background-color: red;
+}
+
+::ng-deep .mat-mdc-menu-panel.mat-mdc-menu-panel {
+  min-width: 112px;
+  max-width: 510px;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+}
 
 @media (max-width: 450px) {
   .container {

@@ -15,7 +15,7 @@ export class CreateNotesComponent implements OnInit {
 
   hidden:boolean = false;
   notes! : FormGroup;
-
+ 
   constructor(
     private formBuilder: FormBuilder,
     private snackBar: MatSnackBar,
@@ -57,4 +57,6 @@ export class CreateNotesComponent implements OnInit {
     this.notes.reset();
     this.hidden = !this.hidden;
   }
+
+
 }
