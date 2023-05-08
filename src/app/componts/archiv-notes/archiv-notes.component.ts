@@ -16,11 +16,15 @@ export class ArchivNotesComponent {
 
   }
   ngOnInit(): void {
-    this.showTrashNotesList();
+    this.showrchivNotesList();
+  }
+
+  refreshrchivNotesList(event:any){
+    this.showrchivNotesList();
   }
 
 
-  showTrashNotesList() {
+  showrchivNotesList() {
     this.notesService.getArchivNotesList().subscribe((result: any) => {
       // console.log(result.data.data);
       this.allArchiveNotesData = result.data.data.reverse();

@@ -6,7 +6,7 @@
         <mat-menu #menuColour="matMenu">
             <div class="colorMenu-main">
                 <div  class="colors">
-                    <div *ngFor="let color of colorsArray">
+                    <div *ngFor="let color of colorsArray"  >
                         <button mat-menu-item class="color-button" matTooltip={{color.colorName}} [style.background-color]="color.colorCode" (click)="changesColorNotes(color.colorCode)"></button>
                     </div>
                 </div>
@@ -15,7 +15,10 @@
 
     <img src="../../../assets/AddImage.svg" matTooltip="Add image" alt="" class="allFuntionlity-img">
     <img src="../../../assets/archiveImage.svg" matTooltip="Archive" alt="" class="allFuntionlity-img"
-        (click)="moveToArchive()">
+        (click)="moveToArchive()" *ngIf="!isArchive">
+
+        <img src="../../../assets/unArchived.svg" matTooltip="UnArchive" alt="" class="allFuntionlity-img"
+        (click)="unArchive()" *ngIf="isArchive">
 
         <img src="../../../assets/more.svg" [matMenuTriggerFor]="menu" matTooltip="More" alt=""
             class="allFuntionlity-img">
@@ -36,5 +39,6 @@
 <div class="allFuntionlity_buttons" *ngIf="!show">
     <img src="../../../assets/delete-permantly.svg" matTooltip="Delete forever" alt="" class="allFuntionlity-img" 
     (click)="deleteForeverNotes()">
-    <img src="../../../assets/restore-button.svg" matTooltip="Restore" alt="" class="allFuntionlity-img">
+    <img src="../../../assets/restore-button.svg" matTooltip="Restore" alt="" class="allFuntionlity-img"
+    (click)="restoreNotes()">
 </div>

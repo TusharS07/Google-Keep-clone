@@ -1,15 +1,15 @@
-<mat-card class="main-create-note">
-    <mat-card-content class="create_note-innner">
+<mat-card class="main-create-note" >
+    <mat-card-content class="create_note-innner" [style.background-color]="color" [style.border-color]="color">
         <div class="take_note_Title">
             <div class="inputForTitle_And_ping">
                 <textarea class="title-input" placeholder="Title" [(ngModel)]="title"
-                    (input)="autoResize($event.target)"></textarea>
+                    (input)="autoResize($event.target)" [style.background-color]="color" [style.border-color]="color"></textarea>
                 <img src="../../../assets/ping.svg" alt="" class="ping-img">
             </div>
 
             <div class="inputForNote">
                 <textarea type="text" class="title-input" placeholder="Take a note..." [(ngModel)]="note"
-                    (input)="autoResize($event.target)"></textarea>
+                    (input)="autoResize($event.target)" [style.background-color]="color" [style.border-color]="color"></textarea>
             </div>
         </div>
 

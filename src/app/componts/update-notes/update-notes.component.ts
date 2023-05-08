@@ -15,6 +15,7 @@ export class UpdateNotesComponent {
   note: any;
   title: any;
   noteId: any;
+  color: any;
 
   constructor(
     private notesService: NotesServiceService,
@@ -25,6 +26,8 @@ export class UpdateNotesComponent {
     this.title = data.title
     this.note = data.description
     this.noteId = data.id
+    this.color = data.color
+
   }
 
 

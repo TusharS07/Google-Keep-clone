@@ -13,9 +13,14 @@ export class IconsComponent implements OnInit {
   @Input() notesData: any
 
   show:boolean = true;
+  isArchive:boolean = false;
 
 
   colorsArray:Array<any> = [
+    {
+      colorName: "Default",
+      colorCode: "#fff"
+    },
     {
       colorName: "Red",
       colorCode: "#f28b82"
@@ -73,6 +78,12 @@ export class IconsComponent implements OnInit {
    }else{
     this.show = true;
    }
+
+   if(this.notesData.isArchived === true){
+    this.isArchive = true;
+   } else{
+    this.isArchive = false;
+   }
   }
 
   moveToTrash() {
@@ -106,6 +117,20 @@ export class IconsComponent implements OnInit {
     })
   }
 
+  unArchive(){
+    let sendDat = {
+      noteIdList: [this.notesData.id],
+      isArchived: false
+    }
+    this.notesService.archiveMoveNotes(sendDat).subscribe((result: any) => {
+      console.log(result);
+      this.refreshTrashAndArchiveNodeTodisplay.emit(result);
+      this.snackBar.open('note is  Unarchive', '', {
+        duration: 4000
+      });
+    })
+  }
+
 
   deleteForeverNotes(){
     let sendDat = {
@@ -115,6 +140,21 @@ export class IconsComponent implements OnInit {
       console.log(result);
       this.refreshTrashAndArchiveNodeTodisplay.emit(result);
       this.snackBar.open('note deleted', '', {
+        duration: 4000
+      });
+
+    })
+  }
+
+  restoreNotes(){
+    let sendDat = {
+      noteIdList: [this.notesData.id],
+      isDeleted: false
+    }
+    this.notesService.trashMoveNotes(sendDat).subscribe((result: any) => {
+      console.log(result);
+      this.refreshTrashAndArchiveNodeTodisplay.emit(result);
+      this.snackBar.open('note Restored', '', {
         duration: 4000
       });
 
